@@ -6,11 +6,17 @@ import Options.Applicative
 data Options = Options
   { files :: [FilePath]
   }
+  deriving (Show)
 
 optionsParser :: Parser Options
 optionsParser =
   Options
-    <$> many (argument str (metavar "FILE..." <> help "Input files (default: stdin)"))
+    <$> many
+      ( argument
+          str
+          ( metavar "FILE..." <> help "Input files (default: stdin)"
+          )
+      )
 
 main :: IO ()
 main = do
