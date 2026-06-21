@@ -12,11 +12,7 @@ optionsParser :: Parser Options
 optionsParser =
   Options
     <$> many
-      ( argument
-          str
-          ( metavar "FILE..." <> help "Input files (default: stdin)"
-          )
-      )
+      (argument str (metavar "FILE..." <> help "Input files (default: stdin)"))
 
 main :: IO ()
 main = do
