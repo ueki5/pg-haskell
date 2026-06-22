@@ -22,7 +22,7 @@ main = do
         (optionsParser <**> helper)
         ( fullDesc
             <> progDesc "Convert lowercase text to uppercase"
-            <> header "pg001 - a text uppercasing tool"
+            <> header "hs001 - a text uppercasing tool"
         )
   case files opts of
     [] -> getContents >>= putStr . map toUpper
