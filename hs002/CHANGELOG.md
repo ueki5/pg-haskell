@@ -1,4 +1,4 @@
-# Revision history for pg002
+# Revision history for hs002
 
 ## 0.1.0.0 -- YYYY-mm-dd
 
