@@ -50,6 +50,13 @@ extra-doc-files:    CHANGELOG.md
 common warnings
     ghc-options: -Wall
 
+library
+    import:           warnings
+    exposed-modules:  UpperCase
+    build-depends:    base ^>=4.19.2.0
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
 executable hs001
     -- Import common warning flags.
     import:           warnings
@@ -57,15 +64,10 @@ executable hs001
     -- .hs or .lhs file containing the Main module.
     main-is:          Main.hs
 
-    -- Modules included in this executable, other than Main.
-    -- other-modules:
-
-    -- LANGUAGE extensions used by modules in this package.
-    -- other-extensions:
-
     -- Other library packages from which modules are imported.
     build-depends:
         base ^>=4.19.2.0,
+        hs001,
         optparse-applicative,
         attoparsec,
         text
@@ -74,4 +76,15 @@ executable hs001
     hs-source-dirs:   app
 
     -- Base language which the package is written in.
+    default-language: Haskell2010
+
+test-suite hs001-test
+    import:           warnings
+    type:             exitcode-stdio-1.0
+    main-is:          Spec.hs
+    build-depends:
+        base ^>=4.19.2.0,
+        hs001,
+        hspec
+    hs-source-dirs:   test
     default-language: Haskell2010

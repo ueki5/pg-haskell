@@ -1,7 +1,7 @@
 module Main where
 
-import Data.Char (toUpper)
 import Options.Applicative
+import UpperCase (uppercaseText)
 
 data Options = Options
   { files :: [FilePath]
@@ -25,8 +25,8 @@ main = do
             <> header "hs001 - a text uppercasing tool"
         )
   case files opts of
-    [] -> getContents >>= putStr . map toUpper
+    [] -> getContents >>= putStr . uppercaseText
     fs -> mapM_ processFile fs
 
 processFile :: FilePath -> IO ()
-processFile path = readFile path >>= putStr . map toUpper
+processFile path = readFile path >>= putStr . uppercaseText
