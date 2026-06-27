@@ -4,3 +4,4 @@ dist-newstyle/
 .DS_Store
 .worktrees/
 input/
+output/
