@@ -3,3 +3,4 @@ dist-newstyle/
 .vscode/
 .DS_Store
 .worktrees/
+input/
